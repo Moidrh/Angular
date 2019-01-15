@@ -1,0 +1,19 @@
+<h2>Mis Celulares</h2>
+<div>
+    <label>Nombre celular:
+        <input #Nombrecelular/>
+    </label>
+    <button (click)="add(Nombrecelular.value); Nombrecelular.value=''">
+        add
+    </button>
+</div>
+<ul class="heroes">
+    <li *ngFor="let celular of celulares">
+        <a routerLink="/detail/{{ celular.id }}">
+            <span class="badge">{{ celular.id }}</span> {{ celular.nombre }}
+        </a>
+        <button class="delete" title="delete hero" (click)="delete(celular)">
+            x
+        </button>
+    </li>
+</ul>
